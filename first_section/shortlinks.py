@@ -86,7 +86,7 @@ class Server:
 
         await self.send_json(send, 200, {"short_url": f"http://localhost:8000/{short_id}"})
 
-    async def send_json(self, send: ASGISendCallable, status: int, data: Dict[str, Any]) -> None:
+    async def send_json(self, send, status: int, data: Dict[str, Any]) -> None:
         await send({
             "type": "http.response.start",
             "status": status,
